@@ -1,0 +1,58 @@
+#
+# Redline reliable queueing system using redis
+#
+# (init file for provisioning core data structures)
+#
+# Dexter Taylor, architect
+# binarymachineshop@gmail.com
+#
+#
+
+
+
+# A redline instance contains six core data structures:
+# pending_list
+# working_set
+# values_table
+# delayed_set
+# stats_table
+# segment_counter
+# distribution_pool_table
+
+
+# A redline message has the following structure:
+# 
+
+
+
+globals:
+        instance_name:   blocpower
+        default_prefix: bpr
+        base_directory:
+        options:
+        logfile:
+
+
+distribution_pools:
+        default:
+            segments:
+                - seg1
+                - seg2
+                - seg3
+                - seg4
+
+
+schema:
+        structures:
+            - pending_list
+            - working_set
+            - values_table
+            - delayed_set 
+            - msg_stats_table
+            - segment_counter
+            - dist_pool_table
+            - uuid_counter
+
+            
+        
+        
